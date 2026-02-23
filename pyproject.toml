@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "change-data-pipeline"
+version = "0.1.0"
+description = "CDC pipeline: DB event stream, consumers, replay, schema evolution"
+requires-python = ">=3.10"
+dependencies = [
+    "jsonschema>=4.0.0",
+]
+
+[project.optional-dependencies]
+postgres = ["psycopg2-binary>=2.9.0"]
+dev = ["pytest>=7.0.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
